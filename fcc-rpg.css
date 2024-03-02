@@ -58,14 +58,14 @@ button:hover {
 }
 
 #refresher {
-background-color: white;
-border: 3px solid white;
-border-radius: 25px;
+  background-color: white;
+  border: 3px solid white;
+  border-radius: 25px;
 }
 
 #refresher:hover {
-color: white;
-background-color: #0a0a23;
-background-image: none;
-border: 3px groove #0a0a23;
+  color: white;
+  background-color: #0a0a23;
+  background-image: none;
+  border: 3px groove #0a0a23;
 }

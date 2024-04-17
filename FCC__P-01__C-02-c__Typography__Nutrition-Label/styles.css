@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+
+/* STEP 6 - THE HTML SELECTOR:
+  // Originally the font is a bit small, so we create an "html" selector and set the font to have a size of "16px" */
+
+html {
+  font-size: 16px;
+}
+
+/* STEP 5 - USING IMPORTED FONTS:
+  // We create a "body" selector and give it a "font-family" set to "Open Sans" with a fallback of "sans-serif"
+  // Remember that fonts with spaces in the name must be wrapped in quotes for CSS */
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* STEPS 8 thru 11 - BORDERS & WHITE SPACE:
+  // Borders can be used to group and prioritize content
+  // Here, we create a ".label" selector and give it a "border" set to "2px solid black" 
+  
+  // Good use of white space can bring focus to the important elements of your page, and help guide your user's eyes through your text
+  // Here, we give our ".label" selector a "width" property set to "270px", a "margin" property set to "20px auto", and a "padding" property set to "0 7px" 
+  
+  // However, originally if you inspect your ".label" element with your browser's developer tools, you may notice that it's actually 288 pixels wide instead of 270
+  // This is because, by default, the browser includes the border and padding when determining an element's size
+  // To solve this, we reset the box model by creating a "*" selector and giving it a "box-sizing" property of "border-box"
+  */
+
+.label {
+  border: 2px solid black;
+  width: 270px;
+  margin: 20px auto;
+  padding: 0 7px;
+}
+
+/* STEP 12 - SEMANTIC STRUCTURE:
+  // Remember that the use of <h1>, <h2>, and similar tags determine the semantic structure of your HTML, but you can adjust the CSS of these elements to control the visual flow and hierarchy
+  // Initially, we create an "h1" rule and set the "font-weight" property to "800" to make the h1 text bolder */
+
+/* STEP 18 - LETTER SPACING:
+  // The "letter-spacing" property can be used to adjust the space between each character of text in an element
+  // Here, we give our "h1" selector a "letter-spacing" property set to "0.15px" to space them out a bit more */
+
+/* STEPS 24 & 25 - TARGETING NESTED ELEMENTS: 
+  // After wrapping everything within the ".label" element in a new <header> element in the HTML file, we update the original "h1" selector here to be "header h1" to specifically target the <h1> element within the new <header> */
+
+header h1 {
+  text-align: center;
+  margin: -4px 0;
+  letter-spacing: 0.15px;
+}
+
+/* STEP 15 - REMOVING MARGINS:
+  // Here, we create a <p> selector and remove all margins */
+
+/* STEP 23 - HORIZONTAL SPACING, CONTINUED:
+  // After wrapping part of the "Serving Size" paragraph in a <span> element, we can add the horizontal spacing using "flex"
+  // In the "p" selector, we add a "display" property set to "flex" and a "justify-content" property set to "space-between" */
+
+p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+}
+
+/* STEP 19 - CODE OPTIMIZATION:
+  // Nutrition labels have a lot of bold text to draw attention to important information
+  // Rather than targeting each element that needs to be bold, it is more efficient to use a class to apply the bold styling to every element
+  // Thus, we can give the necessary elements an additional "class" attribute set to "bold" and remove the extranneous "font-weight" properties from the CSS file */
+
+.bold {
+  font-weight: 800;
+}
+
+.large {
+  height: 10px;
+}
+
+/* STEPS 26 thru 28 - STYLING BORDRES:
+  // After creating a new <div> element below the <header> and giving it a "class" attribute set to "divider large" in the HTML file, we create a new ".large" selector and give it a "height" property set to "10px" and set the "background-color" property to "black" here
+
+  // However, originally we may notice there is still a small border at the bottom of the ".large" element
+  // To reset this, we give our ".large, .medium" group selector a "border" property set to "0"
+  // The "medium" class will be utilized later for the thinner bars of the nutrition label */
+
+.large,
+.medium {
+  background-color: black;
+  border: 0;
+}
+
+.medium {
+  height: 5px;
+}
+
+/* STEP 31 - REM (ROOT EM):
+  // The "rem" unit stands for "root em" and is relative to the font size of the "html" element
+  // Here, we create a ".small-text" selector and set the "font-size" to "0.85rem", which calculates to roughly "13.6px" since we set "html" to have a "font-size" of "16px" */
+
+.small-text {
+  font-size: 0.85rem;
+}
+
+/* STEPS 29, 33 & 34 - FLEX DISPLAY:
+  // After nesting within the ".calories-info" <div> a new <p> element with calorie information and wrapping part of it in a <span>, we can adjust the spacing
+  // Here, we create a new ".calories-info" selector and give it a "display" property set to "flex", a "justify-content" property set to "space-between", and an "align-items" property set to "flex-end" */
+
+.calories-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.calories-info h2 {
+  margin: 0;
+}
+
+/* STEPS 30 & 35 - MORE ADJUSTING SPACING:
+  // After nesting within the ".calories-info" <div> a new <div> element with a "class" attribute set to "left-container", we can continue adjust the spacing
+  // Here, we create a new ".left-container p" selector setting the top and bottom margin to "-5px", the left and right margin to "-2px", the "font-size" to "2em", and the "font-weight" to "700"
+  // This targets the "Calories" text
+*/
+
+.left-container p {
+  margin: -5px -2px;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+/* STEPS 36 & 37 - MORE TARGETING NESTED ELEMENTS:
+  // Here, we create a ".calories-info span" selector and set its "font-size" to "2.4em" and "font-weight" to "700" 
+  // This targets the "230" text (i.e., amount of Calories) 
+  
+  // Typography is often more art than science, so you may have to tweak things like alignment until it looks correct
+  // Here, we give our ".calories-info span" selector a "margin" set to "-7px -2px" to shift the "230" text into place */
+
+.calories-info span {
+  margin: -7px -2px;
+  font-size: 2.4em;
+  font-weight: 700;
+}
+
+/* STEPS 40 & 41 - MORE ADJUSTING SPACING:
+  // After creating a new <div> element with a "class" attribute set to "daily-value small-text", then nesting within it a <p> element with the "class" attribute "bold right", we want to align the "% Daily Value *" within the paragraph to the right
+  // Here, we create a ".right" selector and use the "justify-content" property to do so */
+
+.right {
+  justify-content: flex-end;
+}
+
+.indent {
+  margin-left: 1em;
+}
+
+.double-indent {
+  margin-left: 2em;
+}
+
+/* STEPS 47 thru 50 - THE "NOT" PSEUDO-SELECTOR:
+  // First, we create a ".daily-value p" selector to target all <p> elements in the "daily-value" section and give it a "border-bottom" set to "1px solid #888989"
+
+  // However, originally the bottom borders under the "% Daily Value *" and "Saturated Fat 1g 5%" elements do not extend the full width of the label, so we add "no-divider" to the "class" for those two elements
+
+  // The ":not" pseudo-selector can be used to select all elements that do not match the given CSS rule
+  // The following example selects all <div> elements *without* an "id" of "example":
+    // // div:not(#example) {
+            color: red;
+          }
+  // Here, we modify the ".daily-value p" selector to exclude the ".no-divider" elements
+
+  // Note that we will now have to add separate dividers below our ".no-divider" elements */
+
+.daily-value p:not(.no-divider) {
+  border-bottom: 1px solid #888989;
+}
+
+/* STEPS 65 thru 67 - STYLING THE "NOTE":
+  // Here, we create a ".note" selector, set the size of the font to "0.6rem", set the top and bottom margins to "5px" (removing the left and right margins), and set left and right padding to "8px" (removing the top and bottom padding)
+  // Lastly, we set the "text-indent" property to "-8px" */
+
+.note {
+  font-size: 0.6rem;
+  margin: 5px 0;
+  padding: 0 8px;
+  text-indent: -8px;
+}

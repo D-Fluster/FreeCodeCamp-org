@@ -1,0 +1,116 @@
+/* STEP 8 - WIDTH: 
+  // Even though your <div> has no text originally, it's still treated as a box with content
+  // We can write a CSS rule that uses the ".canvas" class selector and set its width to 500 pixels
+  // Here's a CSS rule that sets the width of the class "card" to 300 pixels:
+    // // .card {
+            width: 300px;
+          }
+*/
+
+/* STEPS 21 & 22 - ADJUSTING THE FIRST SHAPE:
+  // Originally, ".one" (with just its first 4 attributes below) is centered horizontally but its top margin is pushing past the canvas and onto the frame's border, shifting the entire canvas down 20 pixels
+  // We (temporarily) add "padding" of "1px" to the ".canvas" element to give the ".one" element something solid to push off of 
+  // However, adding 1 pixel of padding to the top, bottom, left, and right of the canvas changed its dimensions to 502 pixels x 602 pixels
+  // Thus, we replace the "padding" property with "overflow" set to "hidden", changing the canvas back to its original dimensions */
+
+/* STEP 34 - BLUR:
+  // Originally, the colors and shapes of your painting are too sharp to pass as a Rothko, so we use the "filter" property to "blur" the painting by "2px" in the ".canvas" element
+  // Here's an example of a rule that add a 3px "blur":
+  // // p {
+          filter: blur(3px);
+        }
+*/
+
+.canvas {
+  width: 500px;
+  height: 600px;
+  background-color: #4d0f00;
+  overflow: hidden;
+  filter: blur(2px);
+}
+
+/* STEP 13 - THE "FRAME": 
+  // Originally the ".frame" is much too wide, so we set its width to 500 pixels */
+
+/* STEP 14 - PADDING THE "FRAME":
+  // Use *padding* to adjust the spacing *within* an element
+  // In ".frame", we use the "padding" shorthand property to increase the space between the ".frame" and ".canvas" elements by "50px"
+  // The shorthand will increase space in the top, bottom, left, and right of the element's border and canvas within */
+
+/* STEP 15 - MARGINS AROUND THE "FRAME":
+  // Use *margins* to adjust the spacing *outside* of an element
+  // Using the margin property, we give the ".frame" element vertical margin of "20px", and horizontal margin of "auto"
+  // This will move the frame down 20 pixels and horizontally center it on the page */
+
+.frame {
+  border: 50px solid black;
+  width: 500px;
+  padding: 50px;
+  margin: 20px auto;
+}
+
+/* STEPS 37 & 40 - SOFTENING EDGES:
+  // Originally, the rectangles are too small and their edges don't have the soft quality of a painting
+  // Thus we increase the area and soften the edges of ".one" by setting its "box-shadow" to "0 0 3px 3px #efb762" 
+
+  // However, the corners of each rectangle are still too sharp
+  // Thus we round each corner of the ".one" element by 9 pixels using the "border-radius" property */
+
+/* STEPS 43 thru 45 - ROTATING:
+  // We rotate each rectangle to give them more of an imperfect, hand-painted look by using the "transform" property
+  // First, we use it on the ".one" selector to rotate it *counter-clockwise* by 0.6 degrees
+  // Next, we rotate the ".two" element *clockwise* by 0.4 degrees */
+
+.one {
+  width: 425px;
+  height: 150px;
+  background-color: #efb762;
+  margin: 20px auto;
+  box-shadow: 0 0 3px 3px #efb762;
+  border-radius: 9px;
+  transform: rotate(-0.6deg);
+}
+
+/* STEP 33 - ADJUSTING MARGINS:
+  // It's helpful to have your margins push in one direction
+  // Originally, with ".two" having "margin: auto", the bottom margin of the ".one" element pushes ".two" down 20 pixels
+  // Thus, in the ".two" selector, we use the "margin" shorthand property to set top margin to "0", horizontal margin to "auto", and bottom margin to "20px" to remove its top margin, horizontally center it, and set its bottom margin to 20 pixels */
+
+/* STEPS 41 & 42 - ADVANCED BORDER RADIUS: 
+  // We use the "border-radius" property on the ".two" selector to set its top-left radius and bottom-right radius to "8px" and top-right radius and bottom-left radius to "10px"
+
+  // The "border-radius" property accepts up to four values to round the top-left, top-right, bottom-right, and bottom-left corners
+  // We round the top-left corner of ".three" by 30 pixels, the top-right by 25 pixels, the bottom-right by 60 pixels, and bottom-left by 12 pixels */
+
+.two {
+  width: 475px;
+  height: 200px;
+  background-color: #8f0401;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 3px 3px #8f0401;
+  border-radius: 8px 10px;
+  transform: rotate(0.4deg);
+}
+
+/* STEP 35 - MORE BLUR:
+  // This rule targets both ".one" and ".two" and increase their "blur" effect by 1 pixel -- i.e., in addition to the 2-pixel blur on the entire ".canvas" */
+
+.one,
+.two {
+  filter: blur(1px);
+}
+
+/* STEPS 29 & 30 - SIZING:
+  // You don't always have to use pixels when sizing an element
+  // Here we set the "width" of ".three" to "91%" and set its "height" to "28%" */
+
+.three {
+  width: 91%;
+  height: 28%;
+  background-color: #b20403;
+  margin: auto;
+  filter: blur(2px);
+  box-shadow: 0 0 5px 5px #b20403;
+  border-radius: 30px 25px 60px 12px;
+  transform: rotate(-0.2deg);
+}

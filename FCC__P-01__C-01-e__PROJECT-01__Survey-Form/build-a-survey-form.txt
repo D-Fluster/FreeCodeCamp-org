@@ -1,0 +1,95 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    </head>
+    <body>
+      <main>
+        <!-- Page title -->
+<h1 id="title">freeCodeCamp Survey Form</h1>
+
+<!-- Page description -->
+<p id="description">Thank you for taking the time to help us improve the platform</p>
+
+<!-- Begin form -->
+        <form id="survey-form">
+
+<fieldset>
+<legend>Basic Info</legend>
+
+          <!-- Name -->
+<label for="name" id="name-label">Name <input type="text" required id="name" placeholder="Enter your name" /></label>
+
+<!-- Email -->
+<label for="email" id="email-label">Email <input type="email" required id="email" placeholder="Enter your Email" /></label>
+
+<!-- Age -->
+<label for="age" id="number-label">Age (optional) <input type="number" id="number" min="10" max="99" placeholder="55" /></label>
+
+</fieldset>
+
+<!-- Current role drop-down -->
+<fieldset>
+  <legend>Droppin' It Down</legend>
+<label for="dropdown">Which option best describes your current role?
+<select name="role" id="dropdown">
+<option selected disabled value="">Select current role</option>
+<option value="student">Student</option>
+<option value="worker">Full Time Job</option>
+<option value="learner">Full Time Learner</option>
+<option value="nunya">Prefer not to say</option>
+<option value="other">Other</option>
+  </select>
+  </label>
+  </fieldset>
+
+
+  <!-- Recommendation radio buttons -->
+  <fieldset>
+    <legend>Radioin' It Up</legend>
+<label for="recommend">
+<input name="recommend" id="yes" value="yes" type="radio" checked /> Definitely
+<input name="recommend" id="maybe" value="maybe" type="radio" /> Maybe
+<input name="recommend" id="unsure" value="no" type="radio" /> Not sure
+  </label>
+  </fieldset>
+
+  <!-- Improvement checkboxes -->
+<fieldset>
+  <legend>Checkin' It Off</legend>
+  <label for="improve">
+<input name="improve" id="front-end" value="front-end" type="checkbox" /> Front-End Projects
+<input name="improve" id="back-end" value="back-end" type="checkbox" /> Back-End Projects
+<input name="improve" id="additional" value="additional" type="checkbox" /> Additional Courses
+  </label>
+</fieldset>
+
+  <!-- Comments -->
+<fieldset>
+  <legend>Other</legend>
+  <label for="comments">Any comments or suggestions?
+<textarea name="comments" id="comments" placeholder="Enter your comment here..."></textarea>
+  </label>
+</fieldset>
+
+<input type="submit" value="Submit" id="submit" />
+          </form>
+
+</main>
+      <body>
+
+
+
+
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+
+
+** end of undefined **
+

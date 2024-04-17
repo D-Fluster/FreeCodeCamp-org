@@ -1,0 +1,352 @@
+/* STEPS 66 & 67 - JUMP vs. SMOOTH SCROLLING: 
+  // Initially, clicking on the navigation links should jump the viewport to the relevant section; however, this jumping can be disorienting for some users
+  // Thus, we select all elements, and set the "scroll-behavior" to "smooth"
+
+  // Certain types of motion-based animations can cause discomfort for some users; in particular, people with *vestibular* disorders have sensitivity to certain motion triggers
+  // The "@media" at-rule has a media feature called "prefers-reduced-motion" to set CSS based on the user's preferences; it can take one of the following values: "reduce" or "no-preference"
+    // // @media (feature: value) {
+            selector {
+              styles
+            }
+          }
+  // Here, we wrap the style rule that sets "scroll-behavior: smooth" within an "@media" at-rule with the media feature "prefers-reduced-motion" having "no-preference" set as the value */
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: #f5f6f7;
+  color: #1b1b32;
+  font-family: Helvetica;
+  margin: 0;
+}
+
+/* STEP 48 - STYLING THE NAVBAR, CONTINUED:
+  // We tidy up the <header> by using Flexbox to put space between the children, and vertically center them
+  // Then, we fix the <header> to the top of the viewport */
+
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #1b1b32;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+/* STEPS 8 & 9 - SVGs: 
+  // A useful property of an SVG (scalable vector graphics) is that it contains a "path" attribute which allows the image to be scaled without affecting the resolution of the resultant image
+  // Originally, the <img> is assuming its default size, which is too large
+  // CSS has a max function which returns the largest of a set of comma-separated values -- for example:
+    // // img {
+            width: max(250px, 25vw);
+          }
+  // In this example, <img> elements will have a minimum width of "250px", and as the viewport grows, the image will grow accordingly to be 25 percent of the viewport width ("vw")
+  // Here, we scale the image using its "id" as a selector, setting the "width" to be the maximum of "100px" or "18vw"
+  
+  // As described in the freeCodeCamp Style Guide (https://design-style-guide.freecodecamp.org/), the logo should retain an aspect ratio of "35 / 4", and have padding around the text
+  // First, we change the "background-color" to "#0a0a23" so we can see the logo
+  // Then, we use the "aspect-ratio" property to set the desired aspect ratio to "35 / 4"
+  // Finally, we add a "padding" of "0.4rem" all around */
+
+#logo {
+  width: max(100px, 18vw);
+  background-color: #0a0a23;
+  aspect-ratio: 35 / 4;
+  padding: 0.4rem;
+}
+
+/* STEP 49 - STYLING THE NAVBAR, CONTINUED:
+  // When the screen width is small, the <h1> does not wrap its text content how it should
+  // Thus, we align the text for the <h1> element in the center */
+
+h1 {
+  color: #f1be32;
+  font-size: min(5vw, 1.2em);
+  text-align: center;
+}
+
+nav {
+  width: 50%;
+  max-width: 300px;
+  height: 50px;
+}
+
+/* STEP 13 - THE CHILD COMBINATOR SELECTOR:
+  // The child combinator selector ">" is used between selectors to target only elements that match the second selector and are a direct child of the first selector
+  // This can be helpful when you have deeply nested elements and want to control the scope of your styling
+  // Here, we use the ">" selector to target the unordered list elements within the "nav" elements, and then use Flexbox to evenly space the children */
+
+/* STEP 50 - STYLING THE NAVBAR, CONTINUED:
+  // Initially, on small screens, the unordered list in the navigation bar overflows the right side of the screen
+  // Thus, we fix this by using "Flexbox" to wrap the <ul> content, then set the following CSS properties to correctly align the text:
+    // // align-items: center;
+          padding-inline-start: 0;
+          margin-block: 0;
+          height: 100%;
+*/
+
+nav > ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-inline-start: 0;
+  margin-block: 0;
+  height: 100%;
+}
+
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+  padding: 0.2rem;
+  display: block;
+}
+
+/* STEP 47 - STYLING THE NAVIGATION BAR:
+  // Then, we create a new selector targeting the navigation list elements so that when the cursor hovers over them, the background color and text color are switched, and the cursor becomes a pointer */
+
+nav > ul > li:hover {
+  background-color: #dfdfe2;
+  color: #1b1b32;
+  cursor: pointer;
+}
+
+/* STEP 46 - VISUAL CONTRAST:
+  // On the topic of visual accessibility, contrast between elements is a key factor
+  // For example, the contrast between the text and the background of a heading should be at least 4.5:1
+  // Thus, we change the font color of all the anchor elements within the list elements to something with a contrast ratio of at least 7:1 */
+
+/* STEP 47 - STYLING THE NAVIGATION BAR:
+  // To make the navigation buttons look more like typical buttons, we remove the underline from the anchor tags */
+
+li > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* STEP 49 - STYLING THE NAVBAR, CONTINUED:
+  // Here, we give the <main> padding such that the "Student Info" section header can be fully seen */
+
+main {
+  padding-top: 50px;
+}
+
+/* STEP 51:
+  // Here, we set the width of the <section> elements to 80% of their parent container
+  // We also use margins to center the <section> elements, adding "10px" to the bottom margin, and ensure they cannot be larger than "600px" in width */
+
+section {
+  width: 80%;
+  margin: 0 auto 10px auto;
+  max-width: 600px;
+}
+
+/* STEP 17 - TYPEFACE:
+  // Typeface plays an important role in the accessibility of a page
+  // Some fonts are easier to read than others, and this is especially true on low-resolution screens
+  // Here, we change the font for both the <h1> and <h2> elements to "Verdana", and use another web-safe font in the sans-serif family as a fallback
+  // We also add a "border-bottom" of "4px solid #dfdfe2" to the <h2> elements to make the sections distinct */
+
+h1,
+h2 {
+  font-family: Verdana, Tahoma;
+}
+
+/* STEP 52:
+  // Here, we replace the top margin of the <h2> elements with "60px" of top padding */
+
+h2 {
+  border-bottom: 4px solid #dfdfe2;
+  margin-top: 0px;
+  padding-top: 60px;
+}
+
+/* STEP 53:
+  // Here, we add padding to the top and left of the ".info" elements, setting the other values to "0" */
+
+.info {
+  padding: 10px 0 0 5px;
+}
+
+/* STEP 54:
+  // Here, we give the ".formrow" elements top margin, and left and right padding, with other padding values being "0" */
+
+.formrow {
+  margin-top: 30px;
+  padding: 0px 15px;
+}
+
+/* STEP 54:
+  // Then, we increase the font size for all <input> elements */
+
+input {
+  font-size: 16px;
+}
+
+/* STEP 57:
+  // To align the input boxes with each other, we create a new ruleset that targets all <input> and <label> elements within an ".info" element and set their "display" property to "inline-block" */
+
+.info label,
+.info input {
+  display: inline-block;
+}
+
+/* STEP 55:
+  // To make the first section look more inline, we target only the <input> elements within ".info" elements, setting their "width" to "50%" and left-aligning their text */
+
+.info input {
+  width: 50%;
+  text-align: left;
+}
+
+/* STEPS 56 & 57:
+  // Here, we target all <label> elements within ".info" elements, setting their "width" to "10%" and making it so they do not take up less than "55px" 
+  
+  // Also, we align the <label> element's text to the right */
+
+.info label {
+  width: 10%;
+  min-width: 55px;
+  text-align: right;
+}
+
+/* STEP 58:
+  // Here, we neaten the ".question-block" elements by setting the following CSS properties:
+    // // text-align: left;
+          display: block;
+          width: 100%;
+          margin-top: 20px;
+          padding-top: 5px;
+*/
+
+.question-block {
+  text-align: left;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 5px;
+}
+
+/* STEP 59 - APPARENT PRIORITY:
+  // Here, we make the paragraph elements appear as a higher priority, with the following CSS properties:
+    // // margin-top: 5px;
+          padding-left: 15px;
+          font-size: 20px;
+*/
+
+p {
+  margin-top: 5px;
+  padding-left: 15px;
+  font-size: 20px;
+}
+
+/* STEP 34 - THE "BEFORE" PSEUDO-ELEMENT:
+  // To prevent unnecessary repetition, we target the "before" pseudo-element of the <p> element, and give it a "content" property of "Question #"
+  // As a result, although our two true/false questions in the HTML section only have <p> text of "1" or "2", they'll now be displayed as "Question #1", etc.
+*/
+
+p::before {
+  content: "Question #";
+}
+
+/* STEP 60 - REMOVING BORDERS USED IN DEVELOPMENT:
+  // It is useful to see the default border around the <fieldset> elements during development; however, it might not be the style you want
+  // Thus, we remove the border and bottom padding on the ".question" elements */
+
+.question {
+  border: none;
+  padding-bottom: 0;
+}
+
+/* STEP 61 - STYLING THE TRUE/FALSE QUESTIONS:
+  // While <ul>/<li> elements are great at providing bullets for list items, our radio buttons don't need them
+  // We can control what the bullets look with the "list-style" property
+  // For example, you can turn your bullets into circles with the following:
+    // // ul {
+            list-style: circle;
+          }
+  // Here, we remove the default styling for the ".answers-list" items by setting its style to "none", as well as remove the unordered list padding */
+
+.answers-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* STEP 62 - STYLING THE SUBMIT BUTTON:
+  // Here, we give the submit button a freeCodeCamp-style design, with the following CSS properties:
+    // // display: block;
+          margin: 40px auto;
+          width: 40%;
+          padding: 15px;
+          font-size: 23px;
+          background: #d0d0d5;
+          border: 3px solid #3b3b4f;
+*/
+
+button {
+  display: block;
+  margin: 40px auto;
+  width: 40%;
+  padding: 15px;
+  font-size: 23px;
+  background: #d0d0d5;
+  border: 3px solid #3b3b4f;
+}
+
+/* STEP 63 - STYLING THE FOOTER:
+  // Here, we set the <footer> background color to "#2a2a40", and use "Flexbox" to horizontally center the text */
+
+footer {
+  background-color: #2a2a40;
+  display: flex;
+  justify-content: center;
+}
+
+/* STEP 64 - STYLING THE FOOTER, CONTINUED:
+  // Initially, we cannot read the text, as it's a dark color with a dark background
+  // Thus, we target the footer and the anchor element within to set the font color to a color of adequate contrast ratio */
+
+footer,
+footer a {
+  color: #dfdfe2;
+}
+
+/* STEP 65: 
+  // Here, we horizontally center all the text within the <address> element, and add some padding */
+
+address {
+  text-align: center;
+  padding: 0.3em;
+}
+
+/* STEP 25 - ADDING CONTEXT FOR SCREEN READERS ONLY, CONTINUED:
+  // Initially, the ".sr-only" text is still visible
+  // There is a common pattern to visually hide text for only screen readers to read, which is to set the following CSS properties:
+    // // position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+*/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

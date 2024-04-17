@@ -1,0 +1,277 @@
+<!--
+    // freeCodeCamp.org > Learn
+    // Certification Path 01 - Responsive Web Design
+    // Course 02-d - earn Accessibility by Building a Quiz
+    // See: https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/
+
+    // DESCRIPTION:
+    Accessibility is making your webpage easy for all people to use – even people with disabilities.
+
+    In this course, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices.
+-->
+
+<!DOCTYPE html>
+
+<!-- STEP 1 - SPECIFYING THE LANGUAGE: 
+  * Welcome to the first part of the Accessibility Quiz
+  * We start this accessibility journey by providing a "lang" attribute to our "html" element to assist screen readers in identifying the language of the page -->
+
+<html lang="en">
+  <head>
+
+    <!-- STEPS 2 thru 4 - META TAGS: 
+      * You may be familiar with the <meta> element already; it is used to specify information about the page, such as the title, description, keywords, and author
+      * Here, we give our page a <meta> element with an appropriate "charset" value
+      * The "charset" attribute specifies the character encoding of the page, and, nowadays, "UTF-8" is the only encoding supported by most browsers
+
+      * Continuing with the <meta> elements, a "viewport" definition tells the browser how to render the page; including one betters visual accessibility on mobile, and improves SEO (search engine optimization)
+      * Next, we add a "viewport" definition with a "content" attribute detailing the "width" and "initial-scale" of the page
+
+      * Another important <meta> element for accessibility and SEO is the "description" definition; the value of the "content" attribute is used by search engines to provide a description of your page
+      * Finally, we add a <meta> element with the "name" attribute set to "description", and give it a useful "content" attribute -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+    
+    <!-- STEP 5 - THE TITLE:
+      * Lastly in the <head>, the <title> element is useful for screen readers to understand the content of a page
+      * Furthermore, it is an important part of SEO
+      * Here, we give our page a <title> that is descriptive and concise -->
+
+    <title>Accessibility Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <!-- STEP 6 - STRUCTURE & NAGIVATION:
+      * Navigation is a core part of accessibility, and screen readers rely on you to provide the structure of your page
+      * This is accomplished with semantic HTML elements
+      * Thus, we add a <header> and a <main> element to our page here
+      * The <header> element will be used to introduce the page, as well as provide a navigation menu
+      * The <main> element will contain the core content of your page -->
+    
+    <!-- STEP 7 - THE HEADER: 
+      * Within the header, provide context about the page by nesting one <img>, <h1>, and <nav> element -->
+
+    <header>
+      <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
+      <h1>HTML/CSS Quiz</h1>
+
+      <!-- STEPS 12 & 18 - THE NAVIGATION BAR:
+        * To enable navigation on the page, we add an unordered list with three list items, whose text is wrapped in anchor tags 
+      
+        * Then, to be able to navigate within the page, we give each anchor element an "href" corresponding to the "id" of the matching <h2> elements -->
+
+      <!-- STEP 68 - ADDING KEYBOARD SHORTCUTS: 
+        * Finally, the navigation accessibility can be improved by providing keyboard shortcuts
+        * The "accesskey" attribute accepts a space-separated list of access keys -- for example:
+           **  <button type="submit" accesskey="s">Submit</button>
+        * Here, we give each of the navigation links a single-letter access key
+        * Note: It is not always advised to use access keys, but they can be useful -->
+
+      <nav>
+        <ul>
+          <li><a href="#student-info" accesskey="i">INFO</a></li>
+          <li><a href="#html-questions" accesskey="h">HTML</a></li>
+          <li><a href="#css-questions" accesskey="c">CSS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+      <!-- STEP 14 - FORM SECTIONS:
+          * As this is a quiz, you will need a form for users to submit answers
+          * You can semantically separate the content within the form using <section> elements
+          * Within the <main> element, we create a <form> with three nested <section> elements
+          * Then, we make the form submit to "https://freecodecamp.org/practice-project/accessibility-quiz" using the correct method -->
+
+      <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
+
+        <!-- STEPS 15 & 16 - ROLES & REGIONS:
+          * To increase the page accessibility, the "role" attribute can be used to indicate the purpose behind an element on the page to assistive technologies
+          * The "role" attribute is a part of the "Web Accessibility Initiative" (WAI), and accepts preset values
+          * Here, we give each of the <section> elements the "role" of "region" 
+            
+          * Every "region" role requires a label, which helps screen reader users understand the purpose of the region
+          * One method for adding a label is to add a heading element inside the region and then reference it with the "aria-labelledby" attribute
+          * Here, we first add "aria-labelledby" attributes to each of the <section> elements
+          * Then, within each <section> element, we nest one <h2> element with an "id" matching the corresponding "aria-labelledby" attribute and some suitable text content -->
+
+        <section role="region" aria-labelledby="student-info">
+          <h2 id="student-info">Student Info</h2>
+
+          <!-- STEPS 19 thru 21 - INPUTS & LABELS:
+            * Filling out the content of the quiz, we first add three <div> elements with a "class" of "info" below "#student-info"
+            * Then, within each <div>, we nest one <label> element and one <input> element
+
+            * It is important to link each <input> to the corresponding <label> element; this provides assistive technology users with a visual reference to the input
+            * This is done by giving the <label> a "for" attribute, which contains the "id" of the <input> 
+            
+            * Then, keeping in mind best-practices for form inputs, we give each <input> an appropriate "type" and "name" attribute -->
+          
+          <!-- STEPS 21 & 22 - PLACEHOLDER TEXT:
+            * Initially, we give the first <input> a "placeholder" attribute
+
+            * However, this is actually not a best-practice for accessibility; too often, users confuse the placeholder text with an actual input value and they think there is already a value in the input
+            * Thus, we remove the placeholder text from the first <input> element, relying on the <label> being the best-practice -->
+
+          <div class="info">
+            <label for="student-name">Name:</label>
+            <input type="text" name="student-name" id="student-name" />
+          </div>
+          <div class="info">
+            <label for="student-email">Email:</label>
+            <input type="email" name="student-email" id="student-email" />
+          </div>
+          <div class="info">
+
+            <!-- STEPS 23 & 24 - ADDING CONTEXT FOR SCREEN READERS ONLY:
+              * Arguably, "D.O.B." is not descriptive enough, which is especially true for visually impaired users
+              * One way to get around such an issue, without having to add visible text to the label, is to add text only a screen reader can read
+              * Here, we append a <span> element with a "class" of "sr-only" to the text content of this third label element
+                
+              * Within the <span> element, we add the text "(Date of Birth)"
+              * Finally, we'll use CSS to hide that text, except from screen readers -->
+
+            <label for="birth-date">D.O.B.<span class="sr-only">(Date of Birth)</span></label>
+            <input type="date" name="birth-date" id="birth-date" />
+          </div>
+        </section>
+        <section role="region" aria-labelledby="html-questions">
+          <h2 id="html-questions">HTML</h2>
+          <div class="question-block">
+            <p>1</p>
+
+            <!-- STEPS 27 thru 33 - TRUE/FALSE QUESTIONS: 
+              * Each <fieldset> will contain a true/false question
+              * First, within each <fieldset>, we nest one <legend> element, and one <ul> element with two options
+
+              * Next, we give each <fieldset> an adequate "name" attribute and give both unordered lists a "class" of "answers-list"
+              * Finally, we use the <legend> to caption the content of the <fieldset> by placing a true/false question as the text content
+
+              * To provide the functionality of the true/false questions, we need a set of inputs which do not allow both to be selected at the same time (i.e., radios)
+              * Thus, within each list element, we nest one <label> element, and within each <label> element we nest one <input> element with the appropriate type
+
+              * Then, we add an "id" to all of the radio <input>s so we can link our labels to them
+
+              * Although not required for <label> elements with a nested <input>, it is still best-practice to explicitly link a <label> with its corresponding <input> element
+              * Thus, we add a "for" attribute to each of our four <label>s that links the <label> to its corresponding radio <input>
+
+              * Next, we give the <label> elements text (i..e, "True" or "False") such that the input comes before the text
+              * Then, we give the <input> elements a "value" matching the text
+
+              * Initially, if you click on the radio inputs, you might notice both inputs within the same true/false fieldset can be selected at the same time
+              * Thus, we group the relevant <input>s together such that only one <input> from a pair can be selected at a time -->
+
+            <fieldset class="question" name="html-question-one">
+              <legend>
+                The legend element represents a caption for the content of its parent fieldset element
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q1-a1">
+                    <input type="radio" id="q1-a1" name="q1" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q1-a2">
+                    <input type="radio" id="q1-a2" name="q1" value="false" />
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+          <div class="question-block">
+            <p>2</p>
+            <fieldset class="question" name="html-question-two">
+              <legend>
+                A label element nesting an input element is required to have a for attribute with the same value as the input's id
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q2-a1">
+                    <input type="radio" id="q2-a1" name="q2" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q2-a2">
+                    <input type="radio" id="q2-a2" name="q2" value="false" />
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+        </section>
+        <section role="region" aria-labelledby="css-questions">
+          <h2 id="css-questions">CSS</h2>
+
+          <!-- STEPS 35 thru 38 - DROP-DOWN QUESTION:
+            * The final section of this quiz will contain a dropdown, and a text box
+            * We begin by nesting a <div> with a "class" of "formrow" with four <div> elements inside of it, alternating their "class" attributes between "question-block" and "answer"
+
+            * Then, within the "div.question-block" elements, we nest one <label> element, and add a CSS-related question to the <label> text
+            
+            * Next, within the first "div.answer" element, we nest one "required" <select> element with three <option> elements
+            * We give the first <option> element a "value" of "" and the text "Select an option", the second <option> element a "value" of "yes" and the text "Yes", and the third <option> element a "value" of "no" and the text "No"
+
+            * Then, we link the first <label> element to the <select> element, and give the <select> element a "name" attribute -->
+
+          <div class="formrow">
+            <div class="question-block">
+              <label for="selector">Can the CSS margin property accept negative values?</label>
+            </div>
+            <div class="answer">
+              <select name="selector" id="selector" required>
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="question-block">
+              <label for="css-textarea">Do you have any questions:</label>
+            </div>
+            <div class="answer">
+
+              <!-- STEPS 39 & 40 - FREE RESPONSE QUESTION: 
+                * We nest one <textarea> element within the second "div.answer" element, and set the number of rows and columns it has
+                * Then, we give the <textarea> placeholder text describing an example answer 
+                  
+                * Next, as with the other <input> and <label> elements, we link the <textarea> to its corresponding <label> element, and give it a "name" attribute -->
+
+              <textarea id="css-textarea" name="css-questions" rows="5" cols="24" placeholder="Who is flexbox..."></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 41 - THE SUBMIT BUTTON:
+          * Do not forget to give your <form> a submit button with the text "Send" -->
+
+        <button type="submit">Send</button>
+      </form>
+    </main>
+
+    <!-- STEPS 42 thru 44 - THE FOOTER:
+      * Two final semantic HTML elements for this project are the <footer> and <address> elements
+      * The <footer> element is a container for a collection of content that is related to the page
+      * The <address> element is a container for contact information for the author of the page
+      * Thus, after the <main> element we add one <footer> element and nest one <address> element within it
+    
+      * We use <br> tags to allow each part of the address to be on its own line, as they are useful for presenting <address> elements properly
+
+      * The <address> element does not have to contain a physical geographical location; it can also be used to provide a link to the subject -->
+
+    <footer>
+      <address>
+        <a href="https://freecodecamp.org">freeCodeCamp</a><br />
+        San Francisco<br />
+        California<br />
+        USA
+      </address>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!--
+    // freeCodeCamp.org > Learn
+    // Certification Path 01 - Responsive Web Design
+    // Course 02-c - Learn Typography by Building a Nutrition Label
+    // See: https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-typography-by-building-a-nutrition-label/
+
+    // DESCRIPTION:
+    Typography is the art of styling your text to be easily readable and suit its purpose.
+
+    In this course, you'll use typography to build a nutrition label webpage. You'll learn how to style text, adjust line height, and position your text using CSS.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nutrition Label</title>
+
+  <!-- STEP 4 - IMPORTING FONTS:
+    * Within your <head> element, add a <link> element with the "rel" attribute set to "stylesheet" and the "href" attribute set to "https://fonts.googleapis.com/css?family=Open+Sans:400,700,800"
+    * This will import the "Open Sans" font family, with the font weight values "400", "700", and "800" -->
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="label">
+    <header>
+      <h1 class="bold">Nutrition Facts</h1>
+
+      <!-- STEP 16 - DIVIDING LINES:
+        * Lines can help separate and group important content, especially when space is limited
+        * Here, we create a <div> element below the <h1> element and give it a "class" attribute set to "divider", which is later styled using CSS -->
+
+      <div class="divider"></div>
+      <p>8 servings per container</p>
+
+      <!-- STEP 22 - HORIZONTAL SPACING:
+        * Horizontal spacing between equally important elements can increase the readability of your text
+        * Here, we wrap the text "2/3 cup (55g)" in a <span> element -->
+
+      <p class="bold">Serving size <span>2/3 cup (55g)</span></p>
+    </header>
+    <div class="divider large"></div>
+    <div class="calories-info">
+      <div class="left-container">
+        <h2 class="bold small-text">Amount per serving</h2>
+        <p>Calories</p>
+      </div>
+      <span>230</span>
+    </div>
+    <div class="divider medium"></div>
+    <div class="daily-value small-text">
+      <p class="bold right no-divider">% Daily Value *</p>
+      <div class="divider"></div>
+      <p><span><span class="bold">Total Fat</span> 8g</span> <span class="bold">10%</span></p>
+
+      <!-- STEPS 44 thru 46 - STYLING WITH CLASSES:
+        * Here, we create a new <p> element with the text "Saturated Fat 1g 5%" and wrap the "5%" in a <span> with the "class" attribute set to "bold"
+        * In this case this is enough to align the percentage "5%" to the right 
+      
+        * As this new <p> element will need to be indented, we give it a "class" set to "indent"
+        
+        * In the CSS file, we then create a new ".indent" selector and give it a "margin-left" property set to "1em" -->
+      
+       <p class="indent no-divider">Saturated Fat 1g <span class="bold">5%</span></p>
+      <div class="divider"></div>
+
+      <!-- STEPS 51 & 53 thru 55 - ALIGNMENT USING SPANS: 
+        * First, we create another <p> element with the text "Trans Fat 0g" and italicize the word "Trans" by wrapping it in an <i> element
+        * Then, we give the new <p> element the "class" attribute set to "indent no-divider"
+        * Finally, we wrap "Trans Fat 0g" in a <span> element for alignment -->
+
+      <p class="indent no-divider"><span><i>Trans</i> Fat 0g</span></p>
+      <div class="divider"></div>
+      <p><span><span class="bold">Cholesterol</span> 0mg</span> <span class="bold">0%</span></p>
+      <p><span><span class="bold">Sodium</span> 160mg</span> <span class="bold">7%</span></p>
+      <p><span><span class="bold">Total Carbohydrate</span> 37g</span> <span class="bold">13%</span></p>
+
+      <!-- STEPS 56 thru 58 - MORE STYLING WITH CLASSES: 
+        * Here, we add another <p> element with the text "Dietary Fiber 4g" and give it the "class" necessary to indent it and remove the dividing border
+        * Then we create a separate divider below it 
+      
+        * The advantage to creating these dividers is that you can apply specific classes to style them individually
+        * Next, we add "double-indent" to the "class" for the last ".divider" to do so, which is later styled using CSS -->
+
+      <p class="indent no-divider">Dietary Fiber 4g</p>
+      <div class="divider"></div>
+      <p class="indent no-divider">Total Sugars 12g</p>
+      <div class="divider double-indent"></div>
+      <p class="double-indent no-divider">Includes 10g Added Sugars <span class="bold">20%</span></p>
+      <div class="divider"></div>
+      <p class="no-divider"><span class="bold">Protein</span> 3g</p>
+      <div class="divider large"></div>
+      <p>Vitamin D 2mcg <span>10%</span></p>
+      <p>Calcium 260mg <span>20%</span></p>
+      <p>Iron 8mg <span>45%</span></p>
+      <p class="no-divider">Potassium 235mg <span>6%</span></p>
+    </div>
+    <div class="divider medium"></div>
+    <p class="note">* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily
+      diet. 2,000 calories a day is used for general nutrition advice.</p>
+  </div>
+</body>
+</html>

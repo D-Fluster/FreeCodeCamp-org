@@ -1,0 +1,125 @@
+<!--
+    // freeCodeCamp.org > Learn
+    // Certification Path 01 - Responsive Web Design
+    // Course 01-b - Learn Basic CSS by Building a Cafe Menu, Completed
+    // See: https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-basic-css-by-building-a-cafe-menu
+
+    // DESCRIPTION:
+    CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.
+
+    In this course, you'll learn CSS by designing a menu page for a cafe webpage.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cafe Menu</title>
+    <meta charset="utf-8" />
+    
+    <!-- STEP 17 - RESPONSIVE VIEWS:
+      * For the styling of the page to look similar on mobile as it does on a desktop or laptop, you need to add a <meta> element with a special "content" attribute as shown -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- STEPS 10 thru 16 - STYLING:
+      * Up until now, you have been limited regarding the presentation and appearance of the content you create
+      * To start taking control, you can add a <style> element within the <head> element
+      * You can add style to an element by specifying it in the style element and setting a property for it like this:
+        **  element {
+              property: value;
+              }
+      * This is called using a "type selector" to style the HTML <element>
+
+      * You can add the same group of styles to many elements by creating a list of selectors with each selector separated with commas like this:
+        **  selector1, selector2 {
+              property: value;
+            }
+
+      * While styling can be done by writing CSS inside the style tags, since there will be many more styles, it's best to put all the styles in a separate file and link to it
+      * To link the "styles.css" file so the styles will be applied in the same way, nest a self-closing <link> element in the <head> element with a "rel" attribute value "stylesheet" and an "href" attribute value of "styles.css" -->
+
+    <link href="styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+
+    <!-- STEP 20 - DIVS: 
+      * The <div> element is used mainly for design layout purposes, unlike the other content elements you have used so far 
+      ** SEE CSS -->
+    
+    <div class="menu">
+      <main>
+        <h1>CAMPER CAFE</h1>
+        <p class="established">Est. 2020</p>
+        
+        <!-- STEPS 66 thru 70 - HRs:
+          * You can use an <hr> element to display a divider between sections of different content
+          * Note that <hr> elements are self-closing 
+          ** SEE CSS -->
+
+        <hr>
+        <section>
+          <h2>Coffee</h2>
+          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="coffee icon"/>
+
+          <!-- STEPS 29 thru 35 - ARTICLES:
+            * <article> elements commonly contain multiple elements that have related information
+            * Here, we'll use <article> elements to contain the flavor and price of each item on the menu
+            * Each element within the article can be styled (e.g., aligned) separately by adding and styling independent classes (e.g., "flavor" and "price") -->
+
+          <article class="item">
+
+            <!-- STEPS 36 thru 44 - BLOCK VS. INLINE ELEMENTS:
+              * By default, each <p> element within an <article> will be stacked on top of each other
+              * This is because <p> elements are block-level elements, so they take up the entire width of their parent element
+              * To get them on the same line, this default behavior can be overridden by applyin some styling to the <p> elements so they behave more like inline elements
+              * To do that here, we'll a class attribute with the value "item" to each <article> element (i.e., the mutual parent) 
+              ** SEE CSS 
+              
+              * By default, "inline-block" elements only take up the width of their content; to spread them out, you can add width properties to the class selectors 
+              * However, styling the <p> elements as "inline-block" and placing them on separate lines in the code creates an extra space to the right of the first p element, causing the second one to shift to the next line
+              * One way to fix this is to make each of the two <p> elements' widths a little less than 50%
+              * While you could keep trying various percentages for the widths, instead move the two <p> elements onto the same line in the editor with no space between them 
+              ** SEE CSS  -->
+
+            <p class="flavor">French Vanilla</p><p class="price">3.00</p>
+          </article>
+          <article class="item">
+            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
+          </article>
+          <article class="item">
+            <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
+          </article>
+          <article class="item">
+            <p class="flavor">Hazelnut</p><p class="price">4.00</p>
+          </article>
+          <article class="item">
+            <p class="flavor">Mocha</p><p class="price">4.50</p>
+          </article>
+        </section>
+        <section>
+          <h2>Desserts</h2>
+          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg" alt="pie icon"/>
+          <article class="item">
+            <p class="dessert">Donut</p><p class="price">1.50</p>
+          </article>
+          <article class="item">
+            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
+          </article>
+          <article class="item">
+            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
+          </article>
+          <article class="item">
+            <p class="dessert">Cinnamon Roll</p><p class="price">2.50</p>
+          </article>
+        </section>
+      </main>
+      <hr class="bottom-line">
+      <footer>
+        <p>
+          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
+        </p>
+        <p class="address">123 Free Code Camp Drive</p>
+      </footer>
+    </div>
+  </body>
+</html>

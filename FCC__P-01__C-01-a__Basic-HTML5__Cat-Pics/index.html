@@ -1,0 +1,254 @@
+<!--
+    // freeCodeCamp.org > Learn
+    // Certification Path 01 - Responsive Web Design
+    // Course 01-a - Learn HTML by Building a Cat Photo App
+    // See: https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/
+
+    // DESCRIPTION:
+    HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.
+
+    In this course, you'll learn the most common HTML tags by building your own cat photo app.
+-->
+
+<!-- STEP 4 - COMMENTS:
+  * Commenting allows you to leave messages without affecting the browser display
+  * It also allows you to make code inactive
+  * A comment in HTML starts can contain any number of lines of text -->
+
+<!-- STEP 68 - DOCTYPE:
+  * All pages should begin with <!DOCTYPE html>
+  * This special string is known as a "declaration" and ensures the browser tries to meet industry-wide specifications -->
+  
+<!DOCTYPE html>
+
+  <!-- STEPS 6 & 67 - HTML & NESTING ELEMENTS:
+    * Nested elements should be placed two spaces further to the right of the element they are nested in
+    * This spacing is called indentation and it is used to make HTML easier to read
+    * Notice that the entire contents of the page are nested within an <html> element; all other elements must be descendants of this <html> element
+    * Adding the "lang" attribute with the value "en" to the opening <html> tag specifies that the language of the page is English -->
+
+  <html lang="en">
+      
+  <!-- STEP 65 - HEAD & BODY:
+    * All page content elements that should be rendered to the page go inside the <body> element
+    * However, other important information goes inside the <head> element -->
+    
+  <head>
+
+    <!-- STEP 69 - META TAGS:
+      * You can set browser behavior by adding self-closing <meta> elements in the head
+      * For example, to tell the browser how to encode characters for the page, you can nest a <meta> element with an attribute named "charset" with the value "utf-8" -->
+    
+    <meta charset="utf-8">
+
+    <!-- STEP 66 -  TITLES: 
+      * The <title> element determines what browsers show in the title bar or tab for the page -->
+
+    <title>CatPhotoApp</title>
+  </head>
+
+  <body>
+
+    <!-- STEP 5 - SEO & ACCESSIBILITY IN HTML 5:
+      * HTML5 has some elements that identify different content areas
+      * These elements make your HTML easier to read and help with Search Engine Optimization (SEO) and accessibility
+      * We identify the main section of this page by using a <main> tag -->
+
+    <main>
+
+      <!-- STEP 2 - HEADINGS: 
+        * The h1 through h6 heading elements are used to signify the importance of content below them
+        * The lower the number, the higher the importance, so h2 elements have less importance than h1 elements
+        * Only use one h1 element per page and place lower importance headings below higher importance headings -->
+
+      <h1>CatPhotoApp</h1>
+
+      <!-- STEPS 16 thru 19 - SECTIONS:
+        * Before adding any new content, you should make use of a section element to separate the cat photos content from the future content
+        * When you add a lower rank heading element to the page, it's implied that you're starting a new subsection -->
+      
+      <section>
+        <h2>Cat Photos</h2>
+
+        <!-- STEP 3 - PARAGRAPHS:
+          * The p element is used to create a paragraph of text on websites.-->
+
+        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
+
+        <!-- STEPS 7 thru 9 & 46 - IMAGES & ATTRIBUTES:
+          * <img> elements have an opening tag without a closing tag
+          * A tag for an element without a closing tag is known as a self-closing tag
+          * HTML "attributes" are special words used inside the opening tag of an element to control the element's behavior
+          * For example, the "src" attribute in an <img> element specifies the image's URL (where the image is located)
+          * All <img> elements should have an "alt" attribute
+          * The "alt" attribute's text is used for screen readers to improve accessibility and is displayed if the image fails to load 
+          * When elements have multiple attributes, the order of the attributes doesn't matter -->
+
+        <!-- STEPS 10 thru 15 - ANCHORS/LINKS:    
+          * You can link to another page with the anchor (<a>) element and a "href" attribute
+          * Adding a "target" attribute with the value "_blank" to an <a> element's opening tag opens the link in a new tab -->
+
+        <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+      </section>
+
+      <section>
+        <h2>Cat Lists</h2>
+        <h3>Things cats love:</h3>
+
+        <!-- STEP 20, 21 & 27 - LISTS:
+          * Unordered list (<ul>) element
+          * An ordered list (<ol>) is similar to an unordered list, but list items in an ordered list are numbered when displayed
+          * Use list item (<li>) elements to create items in a list -->
+
+        <ul>
+          <li>cat nip</li>
+          <li>laser pointers</li>
+          <li>lasagna</li>
+        </ul>
+
+        <!-- STEP 23 - FIGURES:
+          * The <figure> element represents self-contained content and will allow you to associate an image with a caption
+          * Nest images within <figure> elements -->
+
+        <figure>
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
+
+          <!-- STEP 24 - FIGURE CAPTIONS:
+            * A figure caption (<figcaption>) element is used to add a caption to describe the image contained within the figure element
+            * After the image nested in the figure element, add a figcaption element -->
+          
+          <!-- STEP 25 - EMPHASIS:
+            * Emphasize text by wrapping it in an emphasis (<em>) element -->
+
+          <figcaption>Cats <em>love</em> lasagna.</figcaption>  
+        </figure>
+
+        <h3>Top 3 things cats hate:</h3>
+
+        <ol>
+          <li>flea treatment</li>
+          <li>thunder</li>
+          <li>other cats</li>
+        </ol>
+
+        <figure>
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
+
+          <!-- STEP 32 - STRONG: 
+            * The <strong> element is used to indicate that some text is of strong importance or urgent -->
+
+          <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
+        </figure>
+      </section>
+      <section>
+        <h2>Cat Form</h2>
+
+        <!-- STEPS 35 & 36 - FORMS:
+          * A web form can collect information from users using the <form> element 
+          * The "action" attribute indicates where form data should be sent
+          * For example, the following tells the browser that the form data should be sent to the path "/submit-url":
+            ** <form action="/submit-url"></form> -->
+
+        <form action="https://freecatphotoapp.com/submit-cat-photo">
+
+          <!-- STEP 50 - FIELDSETS:
+            * The <fieldset> element is used to group related inputs and labels together in a web form
+            * <fieldset> elements are block-level elements, meaning that they appear on a new line -->
+          
+          <fieldset>
+
+            <!-- STEP 51 - LEGENDS: 
+              * The <legend> element acts as a caption for the content in the <fieldset> element
+              * It gives users context about what they should enter into that part of the form -->
+
+            <legend>Is your cat an indoor or outdoor cat?</legend>
+
+            <!-- STEPS 37 thru 39 - INPUTS: 
+              * The <input> element allows you several ways to collect data from a web form
+              * Like <img> elements, <input> elements are self-closing and do not need closing tags
+              * There are many kinds of inputs you can create using the "type" attribute
+              * You can easily create a password field, reset button, or a control to let users select a file from their computer 
+              * In order for a form's data to be accessed by the location specified in the "action" attribute, you must give the text field a "name" attribute and assign it a value to represent the data being submitted
+              * For example, you could use the following syntax for an email address text field:
+                ** <input type="text" name="email"> -->
+
+            <!-- STEPS 44, 48 & 49 - RADIO BUTTONS:
+              * You can use radio buttons for questions where you want only one answer out of multiple options
+              * By default, multiple radio buttons can be selected at the same time
+              * To make it so selecting one radio button automatically deselects the other, both buttons must have a "name" attribute with the same value
+              * If you select a radio button and submit the form, the form data for the button is based on its "name" and "value" attributes
+              * If your radio buttons do not have a "value" attribute, the form data will include "name=on" (e.g., "indoor-outdoor=on"), which is not useful when you have multiple buttons
+              * For convenience, set the button's "value" attribute to the same value as its "id" attribute -->
+            
+            <!-- STEP 45 - LABELS:
+              * <label> elements are used to help associate the text for an <input> element with the <input> element itself, especially for assistive technologies like screen readers
+              * For example, the following makes it so clicking the word "cat" also selects the corresponding radio button:
+                ** <label><input type="radio"> cat</label> -->
+            
+            <!-- STEP 46 - IDs: 
+              * The "id" attribute is used to identify specific HTML elements
+              * Each "id" attribute's value must be unique from all other "id" values for the entire page -->
+
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>What's your cat's personality?</legend>
+
+            <!-- STEPS 54, 57 & 60 - CHECKBOXES:
+              * Forms commonly use checkboxes for questions that may have more than one answer
+              * For example, here's a checkbox with the option of tacos:
+                ** <input type="checkbox"> tacos 
+              * Add a "name" attribute with the same value to each of the checkbox <input> elements; while you won't notice this in the browser, doing this makes it easier for a server to process your web form, especially when there are multiple checkboxes 
+              * Like radio buttons, form data for selected checkboxes are "name"/"value" attribute pairs
+              * While the "value" attribute is optional, it's best practice to include it with any checkboxes or radio buttons on the page -->
+
+            <!-- STEP 56 - LABELS "FOR":
+              * There's another way to associate an <input> element's text with the element itself: you can nest the text within a <label> element and add a "for" attribute with the same value as the <input> element's "id" attribute -->
+
+            <!-- STEP 61 - DEFAULT CHECKS: 
+              * In order to make a checkbox checked or radio button selected by default, you need to add the "checked" attribute to it
+              * There's no need to set a value to the "checked" attribute; instead, just add the word "checked" to the <input> element, making sure there is space between it and other attributes -->
+
+            <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>
+            <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+            <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
+          </fieldset>
+
+          <!-- STEPS 38 thru 40 - TEXT INPUTS: 
+            * You can create a text field to get text input from a user by adding the "type" attribute with the value "text" to an <input> element
+            * Placeholder text is used to give people a hint about what kind of information to enter into an input; for example:
+              ** <input type="text" placeholder="Email address"> -->
+
+          <!-- STEP 41 - REQUIRED INPUTS: 
+            * To prevent a user from submitting your form when required information is missing, you need to add the "required" attribute to an input element
+            * There's no need to set a value to the required attribute; instead, just add the word "required" to the input element, making sure there is space between it and other attributes -->
+
+          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+
+          <!-- STEPS 42 & 43 - BUTTONS:
+            * Use the <button> element to create a clickable button
+            * The default behavior of clicking a form button without any attributes submits the form to the location specified in the form's "action" attribute
+            * While the button will submit the form by default, relying on default behavior may cause confusion
+            * You can add the "type" attribute with the value "submit" to the button to make it clear that it is a submit button -->
+
+          <!-- STEP 43 - A NOTE ON FORMATTING:
+            * Even though you added your button below the text input, they appear next to each other on the page
+            * That's because both input and button elements are inline elements, which don't appear on new lines. -->
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- STEP 62 - FOOTERS:
+      * You can add a footer section to the page with the <footer> element -->
+
+    <footer>
+      <p>
+        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
+      </p>
+    </footer>
+  </body>
+</html>

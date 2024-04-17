@@ -1,0 +1,238 @@
+h1 {
+  text-align: center;
+}
+
+/* STEPS 11, 21 & 24 - COLOR BASICS:
+  // Remember that one way to add color to an element is to use a "color keyword" like "black", "cyan", or "yellow" 
+  
+  // There are two main color models: the "additive" RGB (red, green, blue) model used in electronic devices, and the "subtractive" CMYK (cyan, magenta, yellow, black) model used in print
+  // In this project, you'll work with the RGB model -- meaning that colors begin as black, and change as different levels of red, green, and blue are introduced
+  // An easy way to see this is with the CSS "rgb" function; for example, "black" is "rgb(0, 0, 0)" 
+  
+  // While red and blue markers look the same using color keywords or the "rgb" function, the green one is much lighter with "rgb(0, 255, 0)" than with the color keyword "green"
+  // This is because the "green" color keyword is actually a darker shade, about halfway between black and the maximum value for green -- i.e., ~"rgb(0, 127, 0)" */
+
+/* STEP 22 - FUNCTIONS:
+  // A function is a piece of code that can take an input and perform a specific action
+  // The CSS "rgb" function accepts values, or "arguments", for red, green, and blue, and produces a color:
+    // // rgb(red, green, blue);
+  // Each red, green, and blue value is a number from "0" to "255" where "0" means that there's 0% of that color (i.e., is black) and "255" means that there's 100% of that color */
+
+/* STEPS 26 & 27 - PRIMARY COLORS:
+  // In the additive RGB color model, "primary colors" are colors that, when combined, create pure white
+  // But for this to happen, each color needs to be at its highest intensity (i.e., 255) */
+
+/* STEPS 28 thru 30 - SECONDARY COLORS:
+  // "Secondary colors" are the colors you get when you combine primary colors
+  // To create the first secondary color -- yellow -- you can use the "rgb" function to combine pure red and pure green
+  // To create the next secondary color -- cyan -- use the "rgb" function to combine pure green and pure blue
+  // To create the final secondary color -- magenta -- use the "rgb" function to combine pure blue and pure red */
+
+/* STEPS 31 thru 34 - TERTIARY COLORS: 
+  // "Tertiary colors" are created by combining a primary with a nearby secondary color
+  // To create the tertiary color orange, use the "rgb" function so that red is at the max value, and set green to 127
+  // Notice that, to create orange, you had to increase the intensity of red and decrease the intensity of the green rgb values; this is because orange is the combination of red and yellow
+
+  // To create the tertiary color spring green, combine cyan with green -- i.e., use the "rgb" function with green at the max value and blue is set to "127"
+  // And to create the tertiary color violet, combine magenta with blue -- i.e., use the "rgb" function with blue at the max value and red is set to "127"
+
+  // There are three more tertiary colors: chartreuse green (green + yellow), azure (blue + cyan), and rose (red + magenta)
+  // To create chartreuse green, update the "rgb" function for orange so that red is at "127" and green is set to the max value
+  // For azure, update the "rgb" function for spring green so that green is at "127" and blue is at the max value
+  // And for rose, which is sometimes called bright pink, update the "rgb" function for violet so that blue is at "127" and red is at the max value */
+
+/* STEPS 35 thru 39 - DESIGN, COLOR WHEEL & COMPLIMENTARY COLORS: 
+  // Now that you've gone through all the primary, secondary, and tertiary colors on a color wheel, it'll be easier to understand other color theory concepts and how they impact design
+  // A color wheel is a circle where similar colors, or "hues", are near each other, and different ones are further apart (e.g., pure red is between the hues rose and orange)
+  // Two colors that are opposite from each other on the color wheel are called "complementary colors"
+  // If two complementary colors are combined they produce gray, but when they are placed side-by-side they produce strong visual contrast and appear brighter
+
+  // For example, red and cyan colors are very bright right next to each other
+  // However, this contrast can be distracting if it's overused on a website, and can make text hard to read if it's placed on a complementary-colored background
+  // Thus, it's better practice to choose one color as the dominant color, and use its complementary color as an accent to bring attention to certain content on the page 
+  
+  // For example, you can couch a red element between two black elements and notice how your eyes are naturally drawn to the red color in the center
+  // When designing a site, you can use this effect to draw attention to important headings, buttons, or links
+  // There are several other important color combinations outside of complementary colors, which you'll learn a bit later */
+
+.container {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 0;
+}
+
+/* STEP 12 - ADDING CONTENT WITH CSS:
+  // Initially, the background color is applied but doesn't appear in the preview, since the marker <div> element has no content in it and doesn't have any height by default
+  // The color can be made visible by setting the ".marker" to have non-zero values for its "height" and "width" properties */
+
+/* STEPS 13 thru 15 - MARGINS:
+  // The markers look better centered on the page
+  // An easy way to do that is with the "margin" "shorthand property"
+  // In the last project, you set the margin area of elements separately with properties like "margin-top" and "margin-left"
+  // The "margin" shorthand property makes it easy to set multiple margin areas at the same time -- i.e., "margin-top", "margin-right", "margin-bottom", and "margin-left" 
+  // For example, to center the marker on the page, set its "margin" property to "auto" 
+  
+  // Initially, while you have three separate marker div elements, they look like one big rectangle; you should add some space between them to make it easier to see each element
+  // When the shorthand "margin" property has two values, it sets "margin-top" and "margin-bottom" to the first value, and "margin-left" and "margin-right" to the second value
+  // Thus, to center each "marker" while dividing them up with some vertical space, we set the "margin" property to "10px auto" */
+
+.marker {
+  width: 200px;
+  height: 25px;
+  margin: 10px auto;
+}
+
+/* STEPS 76 & 77 - REPOSITIONING:
+  // Initially, the sleeve looks good but is flush with the left start of the marker div and would look even better if it was positioned more toward the right side of the marker
+  // One way to do that is to add another <div> element before the sleeve <div> to push it to the right, which we do with "cap" */
+
+.cap {
+  width: 60px;
+  height: 25px;
+}
+
+/* STEPS 73 thru 75 - OPACITY:
+  // "Opacity" describes how opaque, or non-transparent, something is
+  // For example, a solid wall is opaque, and no light can pass through; a drinking glass is much more transparent, and you can see through the glass to the other side
+  // With the CSS "opacity" property, you can control how opaque or transparent an element is
+  // With the value "0", or 0%, the element will be completely transparent, and at "1.0", or 100%, the element will be completely opaque like it is by default
+
+  // Another way to set the opacity for an element is with the "alpha channel"
+  // Similar to the opacity property, the alpha channel controls how transparent or opaque a color is
+  // An alpha channel can be added to other CSS color properties rather than using the "opacity" property by itself
+
+  // To add an alpha channel to an "rgb" color, use the "rgba" function instead
+  // The "rgba" function works just like the rgb function, but takes one more number from "0" to "1.0" for the alpha channel:
+    // // rgba(redValue, greenValue, blueValue, alphaValue);
+  // You can also use an alpha channel with hsl and hex colors */
+
+/* STEPS 79 thru 85 - BORDERS: 
+  // All HTML elements have borders, though they're usually set to "none" by default
+  // With CSS, you can control all aspects of an element's border, and set the border on all sides, or just one side at a time
+
+  // For a border to be visible, you need to set its width and style 
+  // Borders have several styles to choose from; solid border lines are probably the most common, but you can also use a dashed or dotted line if you prefer -- for example:
+    // // .sleeve {
+            border-left-width: 10px;
+            border-left-style: solid;
+          }
+
+  // If no color is set, black is used by default -- but to make your code more readable, it's better to set the border color explicitly (e.g., "border-color" or "border-left-color")
+
+  // The "border-left" shorthand property lets you to set the left border's width, style, and color at the same time with the syntax:
+    // // border-left: width style color;
+*/
+
+.sleeve {
+  width: 110px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-left: 10px double rgba(0, 0, 0, 0.75);
+}
+
+/* STEPS 78 - MORE REPOSITIONING:
+  // Initially, it looks like the sleeve disappears because the "cap" <div> is taking up the entire width of the marker, pushing the sleeve <div> down to the next line
+  // This is because the default display property for <div> elements is "block" and, when two "block" elements are next to each other, they stack like actual blocks
+  // For example, your marker elements are all stacked on top of each other
+  // To position two <div> elements on the same line, set both of their "display" properties to "inline-block" */
+
+.cap,
+.sleeve {
+  display: inline-block;
+}
+
+/* STEPS 49 thru 69 - COLOR GRADIENTS:
+  // In addition to setting flat colors in CSS, you can also use a color transition, or "gradient", on an element; a gradient is when one color transitions into another
+  // The CSS "linear-gradient" function lets you control the direction of the transition along a line, and which colors are used
+  // One thing to remember is that the "linear-gradient" function actually creates an image element, and is usually paired with the "background" property, which can accept an image as a value (as opposed to the "background-color" property for flat colors)
+
+  // The linear-gradient function is very flexible with the following basic syntax:
+    // // linear-gradient(gradientDirection, color1, color2, ...);
+  // "gradientDirection" is the direction of the line used for the transition
+  // "color1" and "color2" are color arguments, which are the colors that will be used in the transition itself, and can be any type of color including color keywords, hex, rgb, or hsl
+  // For example, to apply a gradient on a 90-degree (vertical) line, first set the "background" property to "linear-gradient()", and pass it the value "90deg" as the "gradientDirection"
+  
+  // Note that the "linear-gradient" function needs at least two color arguments to work, or it won't be visible
+  // With two colors, the linear-gradient function produces a smooth color1-to-color2 gradient
+  // While the linear-gradient function needs a minimum of two color arguments to work, it can accept many color arguments
+
+  // Color-stops allow you to fine-tune where colors are placed along the gradient line
+  // They are a length unit like px or percentages that follow a color in the linear-gradient function
+  // For example, in the followin red-black gradient, the transition from red to black takes place at the 90% point along the gradient line, so red takes up most of the available space:
+    // // linear-gradient(90deg, red 90%, black);
+
+  // Without the color-stops, with three color arguments, the first color is at the start (0%), the second is in the middle (50%), and the last is at the end (100%) of the gradient line
+  // The "linear-gradient" function automatically calculates these values for you, and places colors evenly along the gradient line by default
+
+  // If no "gradientDirection" argument is provided to the "linear-gradient" function, it arranges colors from top to bottom by default -- i.e., along a 180 degree (horizontal) line */
+
+/* STEP 57 - USING COLOR GRADIENTS FOR "LIGHTING":
+  // Here, we've applied different shades of red to each color argument in the linear-gradient function
+  // The shades on the top and bottom edges of the marker will be darker, while the one in the middle will be lighter, as if there's a light above it */
+
+/* STEPS 86 thru 94 - BOX SHADOWS:
+  // The box-shadow property lets you apply one or more shadows around an element with the following basic syntax:
+    // // box-shadow: offsetX offsetY color;
+  
+  // Here's how the "offsetX" and "offsetY" values work:
+    // // both "offsetX" and "offsetY" accept number values in px and other CSS units
+    // // a positive "offsetX" value moves the shadow right and a negative value moves it left
+    // // a positive "offsetY" value moves the shadow down and a negative value moves it up
+    // // if you want a value of zero ("0") for any or both "offsetX" and "offsetY", you don't need to add a unit; every browser understands that zero means no change
+
+  // The height and width of the shadow is determined by the height and width of the element it's applied to
+  // You can also use an optional "spreadRadius" value to spread out the reach of the shadow
+
+  // Initially, the edges of the shadow are sharp because there is an optional "blurRadius" value for the box-shadow property:
+    // // box-shadow: offsetX offsetY blurRadius color;
+
+  // If a "blurRadius" value isn't included, it defaults to "0" and produces sharp edges
+  // The higher the value of "blurRadius", the greater the blurring effect is
+
+  // You can expand the shadow out further with the optional "spreadRadius" value:
+    // // box-shadow: offsetX offsetY blurRadius spreadRadius color;
+
+  // Like "blurRadius", "spreadRadius" defaults to "0" if it isn't included */
+
+.red {
+  background: linear-gradient(
+    rgb(122, 74, 14),
+    rgb(245, 62, 113),
+    rgb(162, 27, 27)
+  );
+  box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8);
+}
+
+/* STEPS 46 & 47 - HEX COLORS:
+  // A very common way to apply color to an element with CSS is with "hexadecimal" or "hex" values
+  // While hex values sound complicated, they're really just another form of RGB values
+  // Hex color values start with a "#" character and take six characters from 0-9 and A-F (e.g., "#4B5320")
+  // The first pair of characters represent red, the second pair represent green, and the third pair represent blue
+  
+  // You may already be familiar with decimal, or base 10 values, which go from 0 - 9
+  // Hexadecimal, or base 16 values, go from 0 - 9, then A - F -- i.e.: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
+  // With hex colors, "00" is 0% of that color and "FF" is 100%, with "7F" being ~50% and "CC" being ~80% */
+
+/* STEP 93 - HEX ALPHA: 
+  // Add an optional final pair of hex values to any hex code to represent the alpha channel (e.g., "#xxxxxxCC" is 80% transparent)
+*/
+
+.green {
+  background: linear-gradient(#55680d, #71f53e, #116c31);
+  box-shadow: 0 0 20px 0 #3b7e20cc;
+}
+
+/* STEP 48 - HSL COLORS: 
+  // The "HSL" color model -- or hue, saturation, and lightness -- is another way to represent colors
+  // The CSS "hsl" function accepts three values: a number from "0" to "360" for hue, a percentage from "0" to "100" for saturation, and a percentage from "0" to "100" for lightness; you must add the percent sign "%" to the saturation and lightness values
+  // If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and blue is at 240 degrees.
+  // Saturation is the intensity of a color from 0%, or gray, to 100% for pure color
+  // Lightness is how bright a color appears, from 0%, or complete black, to 100%, complete white, with 50% being neutral */
+
+.blue {
+  background: linear-gradient(
+    hsl(186, 76%, 16%),
+    hsl(223, 90%, 60%),
+    hsl(240, 56%, 42%)
+  );
+  box-shadow: 0 0 20px 0 hsla(223, 59%, 31%, 0.8);
+}

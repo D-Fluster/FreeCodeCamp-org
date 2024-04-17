@@ -1,0 +1,218 @@
+/* STEP 28 - BACKGROUND IMAGES:
+  // To use an image instead of a color for the background of the page, use the "background-image" property and set its value to "url(IMAGE_URL_HERE)" */
+
+/* STEPS 57 thru 59 - FONTS:
+  // You can change the "font-family" of text to make it look different from the default font of your browser
+  
+  // Each browser has some common fonts available to it (e.g., "sans-serif", "Impact", etc.) 
+  // You can add a "fallback" value for the "font-family" property by adding another font name separated by a comma, which are used in instances where the initial is not found/available */
+
+body {
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+/* STEP 62 - HEADINGS, DEFAULT SIZES:
+  // The typography of heading elements (e.g. <h1> and <h2>) is set by default values of users' browsers
+  // These values ("40px" for h1 and "30px" for h2) increase the default font sizes */
+
+/* STEPS 84 & 91 - HEADINGS, DEFAULT MARGINS:
+  // Initially, the menu title text ("CAMPER CAFE") has a different space from the top than the address's space at the bottom of the menu
+  // This is due to the browser having some default top margin for the <h1> element
+  // Here, we change the top margin of the <h1> element to "0" to remove all the top margin 
+  // We can also remove some of the vertical space between the <h1> element and the <p> tag text ("Est. 2020") by changing the bottom margin of the <h1> to "15px"
+
+  // Similarly, the <h2> elements have default top and bottom margin space */
+
+h1 {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.established {
+  font-style: italic;
+}
+
+h1,
+h2,
+p {
+  text-align: center;
+}
+
+/* STEPS 21 thru 24 - ID SELECTORS & WIDTH:
+  // The goal now is to make the "menu" <div> not take up the entire width of the page, which the CSS "width" property is perfect for
+  // You can use the "id selector" to target a specific element with an "id" attribute
+  // An "id selector" is defined by placing the hash symbol (#) directly in front of the element's "id" value. For example, if an element has the "id" of "cat" then you would target that element like this:
+    // // #cat {
+            width: 250px;
+          }
+  // While the width can be specified in pixels (px), changing the property's value to be a percentage will make it N% the width of its parent element (i.e., <body> for the "menu" <div>) */
+
+/* STEP 25 - CENTERING:
+  // To center the "menu" <div> horizontally within the <body> element, set its "margin-left" and "margin-right" properties to "auto"
+  // Think of the margin as invisible space around an element */
+
+/* STEP 26 - CLASS SELECTORS:
+  // So far you have been using type and "id" selectors to style elements; However, it is more common to use a "class" selector to style your elements
+  // A "class selector" is defined by a name with a dot directly in front of it, like this:
+    // // .class-name {
+            styles
+          }
+*/
+
+/* STEPS 53 thru 55 - PADDING: 
+  // You can give your menu some space between the content and the sides with various padding properties
+  // Here, since all 4 sides of the menu have the same internal spacing, we can delete the four "padding-[direction]" properties and use a single "padding" property with the value "20px" */
+
+/* STEP 56 - MAX WIDTH:
+  // Originally, the width of the "menu" will always take up 80% of the <body> element's width; on a very wide screen, the item names appear far apart from their prices
+  // We can add a "max-width" property to the menu class with a value of "500px" to prevent it from growing too wide */
+
+.menu {
+  width: 80%;
+  background-color: burlywood;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  max-width: 500px;
+}
+
+/* STEPS 89 & 91 - IMAGE DISPLAY:
+  // <img> elements are "like" inline elements
+  // To make an image behave like a heading element (which are block-level), we create an img type selector and use the value "block" for the "display" property 
+
+  // Initially, there is a large vertical space between the <h2> elements and their associated icons  
+  // While you could change the bottom margin of the <h2> elements to "0" (or another number) to remove the <h2> elements' default top and bottom margin space, there is an easier way
+  // Rather, simply add a negative top margin to the <img> elements to pull them up from their current positions
+  // Negative values are created using a "-" in front of the value */
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -25px;
+}
+
+/* STEPS 67 thru 71 - HRs:
+  // The default properties of an hr element will make it appear as a thin light grey line
+  // You can change the height of the line by specifying a value for the "height" property (e.g., "3px")
+
+  // If we also change the background color, we'll notice the grey color along the edges of the line; those edges are known as "borders"
+  // Each side of an element can have a different color or they can all be the same
+  // To make all the edges of the <hr> element the same color, use the "border-color" property
+
+  // Initially, the thickness of the line looks bigger because the default value of a property named "border-width" is "1px" for all edges of <hr> elements
+  // By changing the border to the same color as the background, the total height of the line becomes 5px (i.e., 3px plus the top and bottom border width of 1px)
+  // By changing the "height" property of the <hr> to be "2px", the total height of it becomes 4px */
+
+hr {
+  height: 2px;
+  background-color: brown;
+  border-color: brown;
+}
+
+/* STEPS 75 & 76 - MORE LINE SPACING: 
+  // Initially, the space between the last menu item (i.e., "Cinnamon Roll") and the second hr element does not match the space between the top <hr> element and the first heading (i.e., "Coffee")
+  // To fix this, add some more space by creating a class named "bottom-line" using "25px" for the "margin-top" property, then adding the "bottom-line" class to the second <hr> element */
+
+.bottom-line {
+  margin-top: 25px;
+}
+
+h1,
+h2 {
+  font-family: Impact, serif;
+}
+
+/* STEP 37 - NESTED SELECTORS & BLOCK VS. INLINE ELEMENTS:
+  // The <p> elements we'd like to target are nested in an <article> element with the class attribute of "item"
+  // You can style all the p elements nested anywhere in elements with a class named item like this:
+    // // .item p { }
+  // The "display" property with value "inline-block" makes it so the targeted elements behave more like inline elements */
+
+/* STEP 73 - LINE SPACING:
+  // Initially, there is a fairly large gap between each line on the menu
+  // This space can be reduced by settin the top and bottom margin to be "5px" */
+
+/* STEP 74 - FONT SIZE:
+  // This "18px" value increases the default font size for <p> elements */
+
+.item p {
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+/* STEP 45 - SMALLER VIEWPORTS:
+  // With each of the "flavor"/"dessert" and "price" <p>s set to "50%" width, if you make the width of the page preview smaller, you will notice at some point some of the text on the left starts wrapping around to the next line
+  // This is because the width of the p elements on the left side can only take up "50%" of the space
+  // Here, since we know the prices on the right will have significantly fewer characters, we'll change the "flavor" class "width" value to be "75%" and the price's to be "25%" */
+
+.flavor,
+.dessert {
+  text-align: left;
+  width: 75%;
+}
+
+.price {
+  text-align: right;
+  width: 25%;
+}
+
+/* FOOTER */
+
+/* STEP 78 - FONT SIZES:
+  //  */
+
+footer {
+  font-size: 14px;
+}
+
+/* STEP 86 - PARAGRAPHS, DEFAULT MARGINS: 
+  // Initially, the space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the <h1> element
+  // To decrease the default margin space below the address <p> element, we create a class selector named "address" and use the value "5px" for the "margin-bottom" property */
+
+.address {
+  margin-bottom: 5px;
+}
+
+/* STEPS 79 & 80 - LINK BEHAVIOR & PSEUDO-SELECTORS:
+  // The default color of a link that has not yet been clicked on is typically blue
+  // The default color of a link that has already been visited from a page is typically purple
+  // To make the footer links the same color regardless if a link has been visited, use a type selector for the anchor element and use the value "black" for the "color" property
+  // You change properties of a link when the link has actually been visited by using a "pseudo-selector" that looks like:
+    // // a:visited { propertyName: propertyValue; }
+*/
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+/* STEP 81 - HOVER PSEUDO-SELECTOR:
+  // You change properties of a link when the mouse hovers over them by using a pseudo-selector that looks like:
+    // // a:hover { propertyName: propertyValue; }
+*/
+
+a:hover {
+  color: brown;
+}
+
+/* STEP 82 - ACTIVE PSEUDO-SELECTOR:
+  // You change properties of a link when the link is actually being clicked by using a pseudo-selector that looks like:
+    // // a:active { propertyName: propertyValue; }
+*/
+
+a:active {
+  color: brown;
+}

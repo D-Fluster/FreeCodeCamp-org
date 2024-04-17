@@ -1,0 +1,127 @@
+** start of undefined **
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+    <title>
+      Dani's Tribute to Amy Winehouse
+    </title>
+</head>
+
+<body>
+  <main id="main">
+
+    <h1 id="title">Amy, Amy, Amy</h1>
+
+    <figure id="img-div">
+      <img id="image" src="https://cdnph.upi.com/svc/sv/upi/56341311443519/2011/1/1fb252aae80843e1f5ab6885e0823a47/Report-Amy-Winehouse-dead-at-27.jpg">
+
+      <figcaption id="img-caption">
+        <em>Amy Winehouse performing live</em>
+      </figcaption>
+    </figure>
+
+    <p id="tribute-info">
+      💪 Never been more darin’<br>
+      🐾 Kitten heels I’m wearin’<br>
+      ⚔️ Reality, a blow that sometimes kills
+    </p>
+
+<p>To mark [what would have been the late singer’s 40th birthday and] the anniversary of her death, Amy’s goddaughter and protege, Dionne [Bromfield], made the documentary
+      <span id="doc">“Amy Winehouse and Me”</span>
+        in which she revisits those in Amy’s life who knew her best, revealing a softer, more maternal side to the singer. She reveals how Amy mentored her and helped her career, shares her fondest memories of her time with Amy and expresses how she believes she was on the road to recovery in the months leading up to her untimely death.</p>
+
+    <a href="https://www.glamourmagazine.co.uk/article/amy-winehouse-goddaughter-dionne-bromfield-interview" target="_blank" id="tribute-link">
+      📖 Read On 📚
+    </a>
+
+
+  </main>
+</body>
+
+** end of undefined **
+
+** start of undefined **
+
+body {
+  background-color: rebeccapurple;
+  color: white;
+  font-family: "Arial", sans-serif;
+}
+
+#title {
+  font-family: "Impact", "Verdana";
+  letter-spacing: 5px;
+}
+
+a {
+  background-color: maroon;
+  border-radius: 27px;
+  color: gold;
+  display: block;
+  font-family: "Impact", "Verdana";
+  font-size: 1.1em;
+  /* font-weight: bold; */
+  letter-spacing: 2px;
+  margin: 11px 111px;
+  padding: 27px;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:visited {
+  color: silver;
+}
+
+a:hover {
+  background-color: gold;
+  color: maroon;
+}
+
+/* figure {
+  width: 100%;
+  margin: auto 0;
+} */
+
+figcaption {
+  font-size: 0.85em;
+  margin-top: -20px;
+  text-align: center;
+}
+
+#image {
+  display: block;
+  height: auto;
+  max-width: 100%;  
+  margin: 27px auto;
+  /* align-items: center; */
+  /* padding: auto 0; */
+  /* aspect-ratio: 1/3; */
+}
+
+#doc {
+  display: block;
+  font-weight: bold;
+  padding: 27px;
+  text-align: center;
+}
+
+#doc:hover {
+  color: gold;
+  font-size: 1.1em;
+}
+
+#tribute-info {
+  color: gold;     
+  margin: 27px;
+  text-align: center;
+}
+
+#tribute-info:hover {
+  transform: rotate(5deg)
+}
+
+** end of undefined **
+

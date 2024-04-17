@@ -1,0 +1,140 @@
+/* STEP 8 - VIEWPORT HEIGHT:
+  // The "vh" unit stands for "viewport height" and is equal to 1% of the height of the viewport, which makes it relative to the viewport height  */
+
+/* STEP 9 - HORIZONTAL SCROLL:
+  // To get rid of the horizontal scroll-bar when using a "width" value of "100%", set the body's default margin (added by some browsers) to "0" */
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #1b1b32;
+  color: #f5f6f7;
+  font-family: Tahoma;
+  font-size: 16px;
+}
+
+h1,
+p {
+  margin: 1em auto;
+  text-align: center;
+}
+
+/* STEP 45 - VIEWPORT WIDTH:
+  // Here, we center the <form> element by giving it a margin of "0 auto"
+  // Then, we fix its size to a maximum width ("max-width") of "500px" with a minimum width ("min-width") of "300px" and, in between that range, we allow it to have a width of "60vw" ("viewport width") */
+
+/* STEP 63 - PADDING THE BOTTOM OF THE PAGE: 
+  // Initially, the "Submit" button is sitting at the bottom of the <form> element, so we add "2em" of "padding" to only the bottom of the <form> */
+
+form {
+  width: 60vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+
+/* STEP 46 - REMOVING DEFAULT BORDERS:
+  // During development, it is useful to see the <fieldset> default borders
+  // However, they make the content appear too separated and can be removed by using a value of "none" in the "border" property */
+
+fieldset {
+  border: none;
+  padding: 2rem 0;
+  border-bottom: 3px solid #3b3b4f;
+}
+
+/* STEP 48 - "LAST" PSEUDO-CLASS: 
+  // Initially, the border of the last <fieldset> element looks a little out of place
+  // You can select the last element of a specific type using the "last-of-type" CSS pseudo-class
+  // For example, the following selects the last <p> element:
+    // // p:last-of-type { }
+*/
+
+fieldset:last-of-type {
+  border-bottom: none;
+}
+
+/* STEP 16 - REM UNITS & DEFAULT DISPLAY OF LABELS:
+  // The "rem" unit stands for "root 'em'" and is relative to the font size of the <html> element
+  // As label elements are inline by default, they are all displayed side by side on the same line, making their text hard to read
+  // To make them appear on separate lines, we add "display: block" to the label element
+  // To further separate them from each other, we add a margin of "0.5rem 0" */
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+/* STEP 49 - SEPARATING ONTO NEW LINES:
+  // In order for the <label> text appear above the form elements on all screen sizes, we can set all <input>, <textarea>, and <select> elements to take up the full width of their parent elements (i.e., "width: 100%") */
+
+/* STEPS 55 & 56 - MINIMUM HEIGHTS:
+  // Initially, the height of the <input> fields is too small to be easy to use
+  // We fix this by setting their "min-height" to "2em" */
+
+input,
+textarea,
+select {
+  margin: 10px 0 0 0;
+  width: 100%;
+  min-height: 2em;
+}
+
+input,
+textarea {
+  background-color: #0a0a23;
+  border: 1px solid #0a0a23;
+  color: #ffffff;
+}
+
+/* STEPS 50 thru 53 - REMOVING LINE SEPARATION:
+  // However, for the second fieldset, you want the input and label text to appear on the same line
+  // First, we give only those <input> elements a class of "inline"
+  // Then, we style the ".inline" elements with a "width" of "unset" to remove the earlier rule which set all the <input> elements to "width: 100%"
+  // Next, we can add some space between the ".inline" elements and the <label text> by settin a right margin of "0.5em" 
+  // Initially, if you look close enough, you will notice the ".inline" elements are too high on the line; to combat this, we set the "vertical-align" property to "middle" */
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+/* STEP 57 & 58 - ATTRIBUTE SELECTORS: 
+  // To style the submit button, you can use an "attribute selector" to select an element based on the given attribute value
+  // For example, the following selects <input> elements with a "name" attribute value of "password":
+    // // input[name="password"]
+
+  // Note that when we change the "display" property to "block" and reduce the "width" to "60%", the submit button sits flush against the left edge of its parent
+  // We can center this using "auto" left and right margins */
+
+input[type="submit"] {
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #3b3b4f;
+  border-color: white;
+  min-width: 300px;
+}
+
+/* STEP 62 - BROWSER DEFAULTS:
+  // Most browsers inject their own default CSS properties and values for different elements
+  // For example, by default a "padding" of "1px 2px" is given to <input> elements you can type in.
+  // If you look closely, you might be able to notice the file input is initially smaller than the other text input elements
+  // Here, we use another attribute selector to style the <input> with a type of "file" to have the same padding as the other <input> elements */
+
+input[type="file"] {
+  padding: 1px 2px;
+}
+
+.inline {
+  display: inline;
+}
+
+a {
+  color: #dfdfe2;
+}

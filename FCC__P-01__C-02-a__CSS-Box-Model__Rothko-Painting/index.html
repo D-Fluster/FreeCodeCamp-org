@@ -1,0 +1,55 @@
+<!--
+    // freeCodeCamp.org > Learn
+    // Certification Path 01 - Responsive Web Design
+    // Course 02-a - Learn the CSS Box Model by Building a Rothko Painting
+    // See: https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-the-css-box-model-by-building-a-rothko-painting/
+
+    // DESCRIPTION:
+    Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.
+
+    In this course, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rothko Painting</title>
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+
+  <!-- STEP 3 - THE BOX BODEL:
+    * In the CSS box model, every HTML element is treated as a box with four areas
+    * Imagine you receive a box from your favorite online retailer -- the content is the item in the box, or in our case, a header, paragraph, or image element
+    * See "/diagram-1" or https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-1.png -->
+
+  <!-- STEP 4 - PADDING: 
+    * The content is surrounded by a space called padding, similar to how bubble wrap separates an item from the box around it
+    * Think of the border like the cardboard box your item was shipped in
+    * See "/diagram-2" or https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-2.png -->
+
+  <!-- STEP 5 - MARGINS:
+    * Margin is the area outside of the box, and can be used to control the space between other boxes or elements
+    * Here the bottom element has a larger top margin, pushing it further down the page
+    * See "/diagram-3" or https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png -->
+
+  <body>
+
+    <!-- STEP 11 - THE "FRAME": 
+      * Every painting needs a frame, so we wrap the ".canvas" element in another <div> and give it a "frame" class -->
+
+    <div class="frame">
+      <div class="canvas">
+
+        <!-- STEP 16 - THE SHAPES: 
+          * We add a first new <div> element inside the ".canvas" element and give it the "class" attribute with a value of "one"
+          * This will be our first rectangle, which is later styled using CSS -->
+
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </div>
+    </div>
+  </body>
+</html>
+

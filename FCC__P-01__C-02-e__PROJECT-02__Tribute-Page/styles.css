@@ -1,0 +1,79 @@
+body {
+  background-color: rebeccapurple;
+  color: white;
+  font-family: "Arial", sans-serif;
+}
+
+#title {
+  color: gold;
+  font-family: "Impact", "Verdana";
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+a {
+  background-color: maroon;
+  border-radius: 27px;
+  color: gold;
+  display: block;
+  font-family: "Impact", "Verdana";
+  font-size: 1.1em;
+  /* font-weight: bold; */
+  letter-spacing: 2px;
+  margin: 11px 111px;
+  padding: 27px;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:visited {
+  color: silver;
+}
+
+a:hover {
+  background-color: gold;
+  color: maroon;
+}
+
+/* figure {
+    width: 100%;
+    margin: auto 0;
+  } */
+
+figcaption {
+  font-size: 0.85em;
+  margin-top: -20px;
+  text-align: center;
+}
+
+#image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: 27px auto;
+  /* align-items: center; */
+  /* padding: auto 0; */
+  /* aspect-ratio: 1/3; */
+}
+
+#doc {
+  display: block;
+  font-weight: bold;
+  padding: 27px;
+  text-align: center;
+}
+
+#doc:hover {
+  color: gold;
+  font-size: 1.1em;
+}
+
+#tribute-info {
+  color: gold;
+  margin: 27px;
+  text-align: center;
+}
+
+#tribute-info:hover {
+  transform: rotate(5deg);
+}

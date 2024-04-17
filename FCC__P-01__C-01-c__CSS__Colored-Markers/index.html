@@ -1,0 +1,63 @@
+<!--
+    // freeCodeCamp.org > Learn
+    // Certification Path 01 - Responsive Web Design
+    // Course 01-c - Learn CSS Colors by Building a Set of Colored Markers
+    // See: https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-css-colors-by-building-a-set-of-colored-markers/
+
+    // DESCRIPTION:
+    Selecting the correct colors for your webpage can greatly improve the aesthetic appeal to your readers.
+
+    In this course, you'll build a set of colored markers. You'll learn different ways to set color values and how to pair colors with each other.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- STEP 4 - ABOUT UTF-8:
+      * "utf-8" is a universal character set ("charset") that includes almost every character from all human languages -->
+
+    <meta charset="utf-8">
+
+    <!-- STEP 5: META TAGS:
+      * You can have multiple self-closing <meta> elements on a web page
+      * Each <meta> element adds information about the page that cannot be expressed by other HTML elements
+      * The <meta> element with a "name" attribute set to "viewport" and a "content" attribute set to "width=device-width, initial-scale=1.0" makes it so your page looks the same on devices of all sizes -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- STEP 3 - TITLES: 
+      * Remember that the title element gives search engines extra information about the page
+      * It also displays the content of that title element in two more ways:
+        ** in the title bar when the page is open, and
+        ** in the browser tab for the page when you hover on it. Even if that tab is not active, once you hover on the tab, the title text is displayed -->
+
+    <title>Colored Markers</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>CSS Color Markers</h1>
+    <div class="container">
+
+      <!-- STEP 16 - MULTIPLE CLASSES & PRECEDENCE:
+        * To give the markers different colors, you will need to add a unique class to each one
+        * Multiple classes can be added to an element by listing them in the "class" attribute and separating them with a space
+        * For example, the following adds both the animal and dog classes to a div element:
+          ** <div class="animal dog">
+        * If you add multiple classes to an HTML element, the styles of the first classes you list may be overridden by later classes -->
+
+      <div class="marker red">
+        <div class="cap"></div>
+        <div class="sleeve"></div>
+      </div>
+      <div class="marker green">
+        <div class="cap"></div>
+        <div class="sleeve"></div>
+      </div>
+      <div class="marker blue">
+        <div class="cap"></div>
+        <div class="sleeve"></div>
+      </div>
+    </div>
+  </body>
+</html>
